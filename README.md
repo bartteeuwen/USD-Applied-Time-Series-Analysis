@@ -1,119 +1,68 @@
-# Forecasting Under Volatility: A Time-Series Approach to TSA Operations
+# Applied Time Series Analysis – Final Project
 
-This repository contains the final project deliverable for the graduate-level course  
-**Applied Time Series Analysis (ADS 506)** in the M.S. in Applied Data Science program at the University of San Diego.
+This repository showcases a **complete, end-to-end time series forecasting project** completed as part of a graduate-level **Applied Time Series Analysis** course in the M.S. in Applied Data Science program at the University of San Diego.
 
-The assignment focused on applying classical time-series methods to a real operational problem, with an emphasis on **forecast robustness, validation under volatility, and translation of forecasts into actionable decisions**.
-
----
-
-## Project Context
-
-### Situation
-The Transportation Security Administration (TSA) screens millions of passengers daily across U.S. airports. Passenger demand follows predictable seasonal patterns but is also subject to significant external shocks such as pandemics, government shutdowns, and extreme weather events. Historically, staffing decisions have been largely reactive, leading to inefficiencies, long wait times, and increased overtime costs.
-
-### Task
-The objective of this project was to determine whether TSA passenger demand can be forecast reliably despite volatility and to demonstrate how those forecasts could be used to support proactive workforce planning.
-
-### Action
-To address this problem, the project:
-- Sourced publicly available TSA passenger screening data
-- Aggregated daily passenger counts into monthly totals aligned with staffing decision cadence
-- Conducted exploratory analysis to identify trends, seasonality, and structural breaks
-- Evaluated multiple classical time-series models, including ETS and ARIMA
-- Applied stationarity testing, differencing, and residual diagnostics
-- Used rolling-origin cross-validation to assess model robustness across stable and volatile periods
-- Translated passenger forecasts into workforce demand using operational throughput assumptions
-
-### Result
-The analysis showed that TSA passenger demand is highly predictable outside of extraordinary events and that **manually specified ARIMA models** outperform automated approaches when evaluated under rolling-origin cross-validation. Forecasts indicate continued growth in peak travel months, highlighting opportunities for TSA to move from reactive staffing to proactive, forecast-driven workforce planning.
+The project demonstrates how classical time series methods can be applied to real operational data to support forecasting, planning, and decision-making under volatility.
 
 ---
 
-## Problem Definition
+## Project Objective
 
-**Problem:**  
-How can TSA reliably forecast passenger demand under volatility and use those forecasts to improve staffing efficiency?
+The Transportation Security Administration (TSA) screens millions of passengers daily across U.S. airports. Passenger volumes follow predictable seasonal patterns but are also disrupted by external shocks such as pandemics, government shutdowns, and extreme weather events.
 
-**Why it matters:**  
-Inaccurate or reactive staffing leads to long wait times, increased overtime, wasted capacity during low-demand periods, and operational strain. Reliable forecasting enables better planning, cost control, and service-level stability.
+The goal of this project was to:
 
-**What time-series modeling solves:**  
-Time-series models allow TSA to capture seasonality, trend, and recovery dynamics while explicitly modeling uncertainty and evaluating performance across historical shocks.
-
----
-
-## Dataset Overview
-
-- **Source:** TSA Passenger Volumes (public data)
-- **Granularity:** Daily passenger counts
-- **Time Range:** November 2019 – October 2025
-- **Preprocessing:**
-  - Aggregated daily data into monthly totals
-  - Retained valid outliers related to holidays and COVID-19 disruption
-  - Removed incomplete months from analysis
-
-The dataset captures both predictable seasonal patterns and extreme volatility.
+- Understand historical TSA passenger demand patterns  
+- Identify trends, seasonality, and structural breaks in the data  
+- Apply appropriate time series forecasting techniques  
+- Evaluate model performance under both stable and volatile conditions  
+- Translate forecasts into insights relevant for workforce planning  
 
 ---
 
 ## What This Repository Contains
 
-- A **fully documented analysis notebook** showing:
-  - Data ingestion and preprocessing
-  - Exploratory data analysis and STL decomposition
-  - Model fitting and diagnostics
-  - Forecast evaluation and comparison
-  - Rolling-origin cross-validation
-  - Workforce demand translation and visualization
+- A **fully documented analysis notebook** containing:
+  - Data ingestion and preprocessing  
+  - Exploratory time series analysis and visualization  
+  - Trend and seasonality decomposition  
+  - Time series model development (ETS and ARIMA)  
+  - Model diagnostics and validation  
+  - Forecast generation and comparison  
 
-> The written report and presentation were submitted separately for the course. This repository focuses on the analytical workflow and modeling output.
-
----
-
-## Modeling Approach
-
-The project evaluated several classical time-series models, including:
-
-- Exponential Smoothing (ETS)
-- Auto-ARIMA
-- Manually specified ARIMA models
-
-Model selection emphasized:
-- Residual diagnostics over raw fit
-- Stability across historical windows
-- Performance under post-shock recovery periods
-- Appropriateness for operational decision-making
-
-Rolling-origin cross-validation was used to ensure robustness beyond a single holdout period.
+The notebook is written to be readable by both technical and non-technical audiences, with explanations provided alongside code, charts, and outputs.
 
 ---
 
-## Key Findings
+## Dataset Overview
 
-- **Validation strategy matters:** Models performing well on a single holdout period may fail under real-world volatility.
-- **Manual ARIMA models proved more robust** than automated approaches across historical shocks.
-- **Passenger demand is highly seasonal and predictable**, even after major disruptions.
-- **Forecasts are significantly more valuable when translated into operational decisions**, such as staffing requirements.
+The dataset consists of **publicly available TSA passenger screening volumes**. Each observation represents the total number of passengers screened on a given day.
+
+Key characteristics include:
+
+- Daily passenger counts aggregated to monthly totals  
+- Strong seasonal travel patterns  
+- Significant disruptions during the COVID-19 period  
+- Clear recovery and growth trends post-disruption  
+
+The data captures both predictable demand cycles and periods of extreme volatility.
 
 ---
 
-## Why This Project Is Relevant
+## Key Takeaways
 
-This project demonstrates how classical time-series techniques can be applied to real operational challenges and extended beyond forecasting into decision support.
-
-The workflow reflects challenges commonly faced in:
-- Operations and capacity planning
-- Public-sector analytics
-- Forecasting under uncertainty
-- Workforce and resource optimization
+- **Passenger demand is highly seasonal and predictable:** TSA volumes show consistent monthly patterns outside of extraordinary events.  
+- **Validation strategy matters:** Models that perform well on a single holdout period may not be robust under real-world volatility.  
+- **Manual ARIMA models proved more stable:** Carefully specified ARIMA models outperformed automated approaches when evaluated using rolling-origin validation.  
+- **Forecasts are most valuable when tied to decisions:** Translating passenger forecasts into workforce planning context significantly increases their practical usefulness.  
+- **Time series methods remain powerful:** Classical forecasting techniques can provide reliable, interpretable insights when applied thoughtfully.
 
 ---
 
 ## Notes
 
-- This project was completed entirely as part of the USD Applied Data Science program.
-- All data used is publicly available.
-- Reports and presentations are available upon request.
+- This project was completed entirely as part of the USD Applied Data Science program.  
+- All data used is publicly available.  
+- Reports and presentations associated with this project are available upon request.
 
 ---
